@@ -40,18 +40,23 @@ class MyArray:
         self.data[index]=value
         self.size+=1
 
-    def pop(self,index=None):
+    def pop(self,index,value):
         if self.size==0:
             raise IndexError("pop from empty array")
-        if index is None:
-            index=self.size-1
-        if not(0<=index<self.size):
-            raise IndexError("Index out of bounds")
-        val=self.data[index]
-        for i in range(index,self.size-1):
-            self.data[i]=self.data[i+1]
-        self.data[self.size-1]=None
-        self.size-=1
+        elif not(0<index<self.size):
+            raise IndexError("Index out of bound")
+        elif index==self.size:
+            value=self.data[index]
+            self.size-=1
+            return value
+        else:
+            value=self.data[index]
+            for i in range(index,self.size,1):
+                self.data[i]=self.data[i+1]
+            self.data[self.size-1]=None
+            self.size-=1
+            return value
+
 
     def traverse(self):
         return [self.data[i] for i in range(self.size)]

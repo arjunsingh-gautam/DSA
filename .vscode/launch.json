@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "d:/Desktop/Computer_Fundamentals/DSA/Basics/Programs",
-      "program": "d:/Desktop/Computer_Fundamentals/DSA/Basics/Programs/build/Debug/outDebug",
+      "cwd": "d:/Desktop/Computer_Fundamentals/DSA/Array_DS/Code",
+      "program": "d:/Desktop/Computer_Fundamentals/DSA/Array_DS/Code/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
