@@ -1,4 +1,4 @@
-# Searching an element in the Linked List
+# Deletion at the beginning of the list
 class Node:
     def __init__(self,data):
         self.data=data
@@ -50,14 +50,15 @@ class SingleLinkedList:
             q.next=new_node
             new_node.next=p
      
-
+    # Display the list by traversing
     def display(self):
         current=self.head
         while current:
             print(current.data,end='->')
             current=current.next
         print("None")
-    
+   
+    # return lenght of the list 
     @property
     def len(self):
         length=0
@@ -67,6 +68,7 @@ class SingleLinkedList:
             current=current.next
         return length
     
+    # Search for the node containing given data
     def search(self,value):
         if not self.head:
             print("List is Empty!")
@@ -81,6 +83,18 @@ class SingleLinkedList:
             current=current.next
         
         print(f"{value} not present in list")
+        
+    # Deletes node from beginning
+    def del_beg(self):
+        if not self.head:
+            print("List is empty")
+            return
+        else:
+            current=self.head
+            self.head=current.next
+            del current
+            
+            
 
 l1=SingleLinkedList()
 print("Length of list:{}".format(l1.len))
@@ -98,6 +112,6 @@ l1.insert_med(50,1)
 print("Length of list:{}".format(l1.len))
 l1.display()
 
-l1.search(30)
-l1.search(60)
-l1.search(50)
+l1.del_beg()
+print("Length of list:{}".format(l1.len))
+l1.display()
